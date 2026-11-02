@@ -63,74 +63,6 @@
     animation: m-reveal 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) var(--rd, 0ms) backwards;
   }
 
-  /* ---------- Nav da home: uma única linha que cabe na tela, some ao rolar para baixo ---------- */
-  .nav-root {
-    top: max(10px, env(safe-area-inset-top)) !important;
-    left: 10px !important;
-    right: 10px !important;
-    gap: 8px !important;
-    transition:
-      transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-      opacity 0.3s ease;
-    will-change: transform;
-  }
-
-  .nav-root[data-hidden='true'],
-  .pnav[data-hidden='true'] {
-    transform: translateY(calc(-100% - 24px));
-    opacity: 0;
-  }
-
-  .nav-root[data-hidden='true'] *,
-  .pnav[data-hidden='true'] * {
-    pointer-events: none !important;
-  }
-
-  .nav-brand {
-    flex: none;
-    height: 44px;
-    padding: 0 13px !important;
-    justify-content: center;
-  }
-
-  .nav-brand-text {
-    display: none;
-  }
-
-  .nav-links {
-    flex: 1 1 auto;
-    min-width: 0;
-    height: 44px;
-    max-width: none !important;
-    padding: 4px !important;
-    gap: 0 !important;
-    justify-content: space-between;
-    align-items: stretch;
-    overflow: hidden !important;
-    font-size: 12.5px !important;
-  }
-
-  .nav-link {
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 6px !important;
-    transition:
-      background 0.25s,
-      color 0.25s,
-      transform 0.2s !important;
-  }
-
-  .nav-link.is-active {
-    background: var(--nl-bg);
-    color: var(--nl-fg);
-  }
-
-  .nav-link:active {
-    transform: scale(0.94);
-  }
-
   /* ---------- Hero ---------- */
   .hero-section {
     background: #07060a;
@@ -328,58 +260,6 @@
 
   .case-next:active {
     color: #3de877 !important;
-  }
-
-  /* ---------- Barra de projetos (3D / Colagem) ---------- */
-  .pnav {
-    top: max(10px, env(safe-area-inset-top)) !important;
-    left: 10px !important;
-    right: 10px !important;
-    gap: 8px !important;
-    transition:
-      transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-      opacity 0.3s ease;
-    will-change: transform;
-  }
-
-  .pnav-back {
-    flex: none;
-    height: 44px;
-    padding: 0 14px !important;
-    font-size: 14px !important;
-    white-space: nowrap;
-  }
-
-  .pnav-group {
-    flex: 1 1 auto;
-    min-width: 0;
-    height: 44px;
-    padding: 4px !important;
-    gap: 2px !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    font-size: 10px !important;
-    letter-spacing: 0.04em !important;
-  }
-
-  .pnav-label {
-    display: none;
-  }
-
-  .pnav-group .pill {
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 6px !important;
-    white-space: nowrap;
-    transition:
-      background 0.25s,
-      transform 0.2s;
-  }
-
-  .pnav-group .pill:active {
-    transform: scale(0.94);
   }
 
   /* ---------- 3D · Céu Líquido ---------- */
@@ -593,30 +473,5 @@
     font-size: 8.5px;
     letter-spacing: 0.02em;
     overflow-wrap: anywhere;
-  }
-}
-
-/* Telas muito estreitas (iPhone SE e similares). */
-@media (max-width: 360px) {
-  .nav-links {
-    font-size: 11.5px !important;
-  }
-
-  .nav-link {
-    padding: 0 4px !important;
-  }
-
-  .pnav-back {
-    padding: 0 10px !important;
-    font-size: 13px !important;
-  }
-
-  .pnav-group {
-    font-size: 9px !important;
-    letter-spacing: 0.02em !important;
-  }
-
-  .pnav-group .pill {
-    padding: 0 4px !important;
   }
 }

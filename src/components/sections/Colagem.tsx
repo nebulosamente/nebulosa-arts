@@ -1,18 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { COL_CARDS } from '../../data/colagem'
 import { useColagemScene } from '../../hooks/useColagemScene'
-import type { Navigate } from '../../lib/links'
-import { ProjectNav } from '../layout/ProjectNav'
 import { ColagemAbertura } from './ColagemAbertura'
 import { ColagemIdentidade } from './ColagemIdentidade'
 import { ColagemParada } from './ColagemParada'
 import { ColagemSerie } from './ColagemSerie'
 
-type ColagemProps = {
-  onNavigate: Navigate
-}
-
-export function Colagem({ onNavigate }: ColagemProps) {
+export function Colagem() {
   const rootRef = useRef<HTMLDivElement>(null)
   const stackRef = useRef<HTMLDivElement>(null)
   const paradaRef = useRef<HTMLElement>(null)
@@ -47,8 +41,6 @@ export function Colagem({ onNavigate }: ColagemProps) {
     onThrown: thrown,
   })
 
-  const goHome = useCallback(() => onNavigate('home'), [onNavigate])
-  const go3d = useCallback(() => onNavigate('3d'), [onNavigate])
   const pick = useCallback((index: number) => {
     setCol(index)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -77,7 +69,6 @@ export function Colagem({ onNavigate }: ColagemProps) {
         color: '#F4F2F8',
       }}
     >
-      <ProjectNav current="colagem" onNavigate={onNavigate} />
       <main>
         <ColagemAbertura
           col={col}
@@ -89,7 +80,7 @@ export function Colagem({ onNavigate }: ColagemProps) {
         />
         <ColagemParada paradaRef={paradaRef} />
         <ColagemIdentidade heraRef={heraRef} />
-        <ColagemSerie onPick={pick} onBack={goHome} onNextProject={go3d} />
+        <ColagemSerie onPick={pick} />
       </main>
     </div>
   )

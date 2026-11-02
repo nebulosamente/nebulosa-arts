@@ -22,21 +22,6 @@ npm run lint
 
 As portas são diferentes em cada um dos três repositórios para dar para rodar todos ao mesmo tempo.
 
-## Links entre os sites
-
-Os links para a home e para os outros dois sites são URLs completas, definidas em `src/lib/links.ts`.
-Para apontar para os deploys novos, defina estas variáveis de ambiente (na Vercel: Project Settings → Environment Variables)
-e faça um novo build:
-
-| Variável | Site | Se não definir |
-| --- | --- | --- |
-| `VITE_URL_HOME` | Home | `https://nebulosa.art` |
-| `VITE_URL_3D` | 3D | `https://nebulosa.art/3d` |
-| `VITE_URL_COLAGEM` | Colagem | `https://nebulosa.art/colagem` |
-| `VITE_URL_MICANGA` | Micanga (Editorial) | `https://nebulosa.art/editorial` |
-
-O link para o próprio site é sempre `/`. Exemplo: `VITE_URL_3D=https://3d.nebulosa.art npm run build`.
-
 ## Deploy
 
 `vercel.json` reescreve qualquer caminho para `index.html` (SPA). As metatags de compartilhamento ganham a URL

@@ -1,21 +1,11 @@
 import { COL_CARDS, COLAGEM_COPY } from '../../data/colagem'
-import { isPlainLeftClick, siteUrl } from '../../lib/links'
 import { ImageSlot } from '../ui/ImageSlot'
 
 type ColagemSerieProps = {
   onPick: (index: number) => void
-  onBack: () => void
-  onNextProject: () => void
 }
 
-const footerLink = {
-  fontFamily: "'JetBrains Mono', monospace",
-  fontSize: 11,
-  letterSpacing: '0.08em',
-  textTransform: 'uppercase',
-} as const
-
-export function ColagemSerie({ onPick, onBack, onNextProject }: ColagemSerieProps) {
+export function ColagemSerie({ onPick }: ColagemSerieProps) {
   return (
     <section
       aria-label="Colagem · Série"
@@ -149,41 +139,6 @@ export function ColagemSerie({ onPick, onBack, onNextProject }: ColagemSerieProp
             </div>
           </button>
         ))}
-      </div>
-      <div
-        style={{
-          position: 'relative',
-          marginTop: 80,
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: 12,
-          paddingTop: 24,
-          borderTop: '1px solid rgba(244,242,248,.25)',
-          ...footerLink,
-        }}
-      >
-        <a
-          href={siteUrl('home')}
-          onClick={(e) => {
-            if (!isPlainLeftClick(e)) return
-            e.preventDefault()
-            onBack()
-          }}
-        >
-          {COLAGEM_COPY.back}
-        </a>
-        <a
-          href={siteUrl('3d')}
-          style={footerLink}
-          onClick={(e) => {
-            if (!isPlainLeftClick(e)) return
-            e.preventDefault()
-            onNextProject()
-          }}
-        >
-          {COLAGEM_COPY.nextProject}
-        </a>
       </div>
     </section>
   )

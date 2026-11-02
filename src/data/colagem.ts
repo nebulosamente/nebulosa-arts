@@ -65,6 +65,4 @@ export const COLAGEM_COPY = {
   seriesIndex: '(02) A série completa',
   seriesTitleA: 'A série ',
   seriesTitleB: 'completa.',
-  back: '← Voltar ao portfólio',
-  nextProject: 'Projeto 01  3D →',
 } as const
