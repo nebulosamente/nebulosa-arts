@@ -1,5 +1,6 @@
 import type { CSSProperties, RefObject } from 'react'
-import { COL_STILLS, COLAGEM_COPY } from '../../data/colagem'
+import { COL_STILLS } from '../../data/colagem/cards'
+import { COLAGEM_COPY } from '../../data/colagem/copy'
 import { ImageSlot } from '../ui/ImageSlot'
 
 type ColagemParadaProps = {

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { COL_CARDS } from '../../data/colagem'
+import { COL_CARDS } from '../../data/colagem/cards'
 import { useColagemScene } from '../../hooks/useColagemScene'
 import type { Navigate } from '../../lib/links'
 import { ProjectNav } from '../layout/ProjectNav'

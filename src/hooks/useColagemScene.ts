@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, type PointerEvent as ReactPointerEvent, type RefObject } from 'react'
-import { COL_STACK_TRANSITION } from '../data/colagem'
+import { COL_STACK_TRANSITION } from '../lib/cardStack'
 import { isMobileViewport } from './mobile'
 
 type ColagemSceneRefs = {
