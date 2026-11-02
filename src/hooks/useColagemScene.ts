@@ -13,6 +13,11 @@ type ColagemSceneRefs = {
   onThrown: (index: number) => void
 }
 
+/** px. Arrastar o pôster além disso o arremessa em vez de devolver à pilha. */
+const THROW_DISTANCE_PX = 110
+/** ms. Tempo do voo do pôster arremessado antes de passar para o próximo. */
+const THROW_FLY_MS = 380
+
 export function useColagemScene({ rootRef, paradaRef, heraRef, onStep, onThrown }: ColagemSceneRefs) {
   const onStepRef = useRef(onStep)
   const onThrownRef = useRef(onThrown)
@@ -55,7 +60,7 @@ export function useColagemScene({ rootRef, paradaRef, heraRef, onStep, onThrown 
       const drag = rt.drag
       if (!drag) return
       rt.drag = null
-      if (Math.abs(drag.dx) > 110) {
+      if (Math.abs(drag.dx) > THROW_DISTANCE_PX) {
         const dir = drag.dx > 0 ? 1 : -1
         drag.el.style.transition = 'transform .45s cubic-bezier(.3,0,.6,1), opacity .45s'
         drag.el.style.transform = `translate(-50%,-50%) translate(${dir * 120}vw, ${drag.dy * 0.4 - 60}px) rotate(${dir * 40}deg)`
@@ -64,7 +69,7 @@ export function useColagemScene({ rootRef, paradaRef, heraRef, onStep, onThrown 
         flyTimer = window.setTimeout(() => {
           drag.el.style.transition = 'none'
           onThrownRef.current(drag.index)
-        }, 380)
+        }, THROW_FLY_MS)
       } else {
         drag.el.style.transition = COL_STACK_TRANSITION
         drag.el.style.transform = drag.tf
