@@ -1,0 +1,2 @@
+/** Mesma sequência usada ao embaralhar os bytes no plugin do Vite. */
+export const CEU_IMAGE_KEY = [0xa7, 0x3c, 0x91, 0x5e, 0x14, 0xd2, 0x6b, 0x88] as const
