@@ -22,6 +22,28 @@ npm run lint
 
 As portas são diferentes em cada um dos três repositórios para dar para rodar todos ao mesmo tempo.
 
+## Estrutura do código
+
+```
+src/
+  main.tsx, App.tsx     entrada e página única
+  components/
+    layout/             ProjectNav (barra fixa entre os projetos)
+    sections/           Colagem (página) e as seções: Abertura, Parada, Identidade, Série
+    ui/                 ImageSlot e ProtectedImage (imagem simples ou desenhada em canvas)
+  data/
+    colagem/            conteúdo separado dos componentes: cards (pôsteres e imagens), copy (textos)
+    projectNav.ts       itens da barra de projetos
+  hooks/                useColagemScene (loop da cena), useHideOnScroll, useMobileReveal, mobile
+  lib/
+    colagemScene/       uma função por cena: trail (título), hera (identidade), parada
+    cardStack.ts        transform e transição da pilha de pôsteres
+    protectedImage.ts, ceuImageKey.ts   carregamento das imagens protegidas
+    links.ts            URLs entre os sites
+  styles/               index.css, mobile.css
+public/media/colagem/   imagens da série e das peças
+```
+
 ## Links entre os sites
 
 Os links para a home e para os outros dois sites são URLs completas, definidas em `src/lib/links.ts`.

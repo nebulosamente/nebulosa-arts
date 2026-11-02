@@ -1,4 +1,5 @@
-import { COL_CARDS, COLAGEM_COPY } from '../../data/colagem'
+import { COL_CARDS } from '../../data/colagem/cards'
+import { COLAGEM_COPY } from '../../data/colagem/copy'
 import { isPlainLeftClick, siteUrl } from '../../lib/links'
 import { ImageSlot } from '../ui/ImageSlot'
 

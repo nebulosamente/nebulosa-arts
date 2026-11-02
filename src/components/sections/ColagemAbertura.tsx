@@ -1,5 +1,7 @@
 import type { CSSProperties, PointerEvent as ReactPointerEvent, RefObject } from 'react'
-import { COL_CARDS, COL_STACK_TRANSITION, COLAGEM_COPY, colStackTransform } from '../../data/colagem'
+import { COL_CARDS } from '../../data/colagem/cards'
+import { COLAGEM_COPY } from '../../data/colagem/copy'
+import { COL_STACK_TRANSITION, colStackTransform } from '../../lib/cardStack'
 import { ImageSlot } from '../ui/ImageSlot'
 
 type ColagemAberturaProps = {

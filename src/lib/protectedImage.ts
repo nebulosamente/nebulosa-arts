@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CEU_IMAGE_KEY } from '../ceuImageKey'
+import { CEU_IMAGE_KEY } from './ceuImageKey'
 
 export type CeuAsset = {
   url: string
