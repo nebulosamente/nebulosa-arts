@@ -24,11 +24,11 @@ export const COL_CARDS: ColCard[] = rows.map(([id, handle, bg, ink], i) => ({
   bg,
   ink,
   n: String(i + 1).padStart(2, '0'),
-  src: `${MEDIA}/${id}.png`,
+  src: `${MEDIA}/${id}.webp`,
 }))
 
 export const COL_STILLS = {
-  parada: `${MEDIA}/a-parada-e-o-amor.jpeg`,
-  poster: `${MEDIA}/poster-nova-hera.jpeg`,
-  sticker: `${MEDIA}/sticker-mariask8tera.jpg`,
+  parada: `${MEDIA}/a-parada-e-o-amor.webp`,
+  poster: `${MEDIA}/poster-nova-hera.webp`,
+  sticker: `${MEDIA}/sticker-mariask8tera.webp`,
 } as const
